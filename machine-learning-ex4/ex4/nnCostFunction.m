@@ -104,9 +104,11 @@ Theta1_grad = (1/m)*Theta1_grad;
 Theta2_grad = (1/m)*Theta2_grad;
 
 
-%Biases should be excluded during backpropagation
+%Biases should be excluded during regularization
 Theta1_grad(:, 2:end) = Theta1_grad(:, 2:end) + lambda / m * Theta1(:, 2:end);
+size(Theta1_grad)
 Theta2_grad(:, 2:end) = Theta2_grad(:, 2:end) + lambda / m * Theta2(:, 2:end);
+size(Theta2_grad)
 
 
 
